@@ -8,6 +8,17 @@
 
     <TextView
         android:id="@+id/textRestaurant"
+<<<<<<< HEAD
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Restaurant:" />
+
+
+=======
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -16,10 +27,33 @@
         android:layout_marginTop="0dp"
         android:text="Restaurant:" />
 
+>>>>>>> 3cd84a0e98a62a0cdb84c0e2093d7b262375f155
     <EditText
         android:id="@+id/editRestaurant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:layout_below="@+id/textRestaurant"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="text"
+        android:text="" >
+        <requestFocus/>
+    </EditText>
+
+
+    <TextView
+        android:id="@+id/textDish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/editRestaurant"
+=======
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
@@ -36,6 +70,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="65dp"
+>>>>>>> 3cd84a0e98a62a0cdb84c0e2093d7b262375f155
         android:text="Dish:" />
 
     <EditText
@@ -43,14 +78,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+<<<<<<< HEAD
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/textDish"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="text"
+=======
         android:layout_alignParentTop="true"
         android:layout_marginTop="85dp"
         android:ems="10"
         android:inputType="textPersonName"
+>>>>>>> 3cd84a0e98a62a0cdb84c0e2093d7b262375f155
         android:text="" />
 
     <TextView
         android:id="@+id/textRating"
+<<<<<<< HEAD
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editDish"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Rating:" />
+
+    <RadioGroup
+        android:id="@+id/radioDishRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="@+id/textDish"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/textRating"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true">
+=======
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editDish"
@@ -66,6 +134,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="151dp"
         android:orientation="horizontal">
+>>>>>>> 3cd84a0e98a62a0cdb84c0e2093d7b262375f155
 
         <RadioButton
             android:id="@+id/dishRating_1"
@@ -103,6 +172,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/radioDishRating"
+<<<<<<< HEAD
+        android:layout_marginTop="20dp"
+=======
+>>>>>>> 3cd84a0e98a62a0cdb84c0e2093d7b262375f155
         android:layout_centerHorizontal="true"
         android:text="Save" />
 
