@@ -1,5 +1,9 @@
 package mealrater.siyuxiang.com.mealrater;
 
+<<<<<<< HEAD
+import android.content.Intent;
+=======
+>>>>>>> 3cd84a0e98a62a0cdb84c0e2093d7b262375f155
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initSaveButton();
+<<<<<<< HEAD
+        iniRatingButton();
+=======
+>>>>>>> 3cd84a0e98a62a0cdb84c0e2093d7b262375f155
     }
 
     public void onResume() {
@@ -79,4 +87,19 @@ public class MainActivity extends AppCompatActivity {
         editDish.setText("");
         rg.clearCheck();
     }
+<<<<<<< HEAD
+
+    private void iniRatingButton() {
+        Button ratingButton = (Button) findViewById(R.id.buttonRating);
+        ratingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RatingActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+    }
+=======
+>>>>>>> 3cd84a0e98a62a0cdb84c0e2093d7b262375f155
 }
