@@ -5,6 +5,7 @@ public class Rating {
     private int ratingID;
     private String restaurantName;
     private String dishName;
+    private int avg_ratingNumber;
     private int ratingNumber;
 
     public Rating () {
@@ -42,5 +43,13 @@ public class Rating {
 
     public void setRatingNumber (int i) {
         ratingNumber = i;
+    }
+
+    public int getAverageRatingNumber () {
+        return avg_ratingNumber;
+    }
+
+    public void setAverageRatingNumber (int i) {
+        avg_ratingNumber = i;
     }
 }

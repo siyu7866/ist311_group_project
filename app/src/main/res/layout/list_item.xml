@@ -20,8 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_below="@+id/textRestaurantName"
-        android:id="@+id/textDishName"
-        android:text="Dish Name" />
+        android:id="@+id/textAverageRating"
+        android:text="Average Rating" />
 
     <Button
         android:id="@+id/buttonEnterRating"
