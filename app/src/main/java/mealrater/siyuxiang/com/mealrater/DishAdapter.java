@@ -13,12 +13,12 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
-public class DishAdapter extends ArrayAdapter<Rating> {
-    private ArrayList<Rating> items;
+public class DishAdapter extends ArrayAdapter<AverageRating> {
+    private ArrayList<AverageRating> items;
     private Context adapterContext;
 
-    public DishAdapter(Context context, ArrayList<Rating> items) {
-        super(context, R.layout.activity_dish_list, items);
+    public DishAdapter(Context context, ArrayList<AverageRating> items) {
+        super(context, R.layout.list_item_dish, items);
         adapterContext = context;
         this.items = items;
     }
@@ -27,19 +27,19 @@ public class DishAdapter extends ArrayAdapter<Rating> {
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
         try {
-            Rating rating = items.get(position);
+            AverageRating ratings = items.get(position);
 
             if (v == null) {
                 LayoutInflater vi = (LayoutInflater)
                         adapterContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                v = vi.inflate(R.layout.list_item, null);
+                v = vi.inflate(R.layout.list_item_dish, null);
             }
 
-            TextView dishName = (TextView) v.findViewById(R.id.textRestaurantName);
-            TextView ratingNumber = (TextView) v.findViewById(R.id.textAverageRating);
+            TextView dishName = (TextView) v.findViewById(R.id.textDishName);
+            TextView ratingDishNumber = (TextView) v.findViewById(R.id.textAverageDishRating);
             Button b = (Button) v.findViewById(R.id.buttonEnterRating);
-            dishName.setText(rating.getRestaurant());
-            ratingNumber.setText(rating.getRating());
+            dishName.setText(ratings.getRestaurantDish());
+            ratingDishNumber.setText(ratings.getDishRating());
             b.setVisibility(View.INVISIBLE);
         }
         catch (Exception e) {

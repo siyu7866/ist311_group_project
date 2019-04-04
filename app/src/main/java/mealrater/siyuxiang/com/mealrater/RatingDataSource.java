@@ -123,6 +123,32 @@ public class RatingDataSource {
             return ratings;
     }
 
+    public ArrayList<AverageRating> getDishRatings(String RestaurantName) {
+        ArrayList<AverageRating> ratings = new ArrayList<AverageRating>();
+        Cursor cursor = null;
+
+        try {
+            String query = "SELECT dish, AVG(rating) FROM rating WHERE restaurant = '" + RestaurantName + "' GROUP BY dish";
+            cursor = database.rawQuery(query, null);
+
+            AverageRating r;
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                r = new AverageRating();
+                r.setRestaurantDish(cursor.getString(0));
+                r.setDishRating(cursor.getString(1));
+                ratings.add(r);
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+        catch (Exception e) {
+            cursor.close();
+        }
+        return ratings;
+    }
+
+
 
 }
 
