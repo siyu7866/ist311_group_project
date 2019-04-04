@@ -12,6 +12,6 @@
 ### Alyssa:
 ### Wenshi:
 * 1 Added AverageRating.java.
-* 2 Added getRatings method in RatingDataSource for restaraunt listView
+* 2 Added getRatings method in RatingDataSource for restaurant listView
 * 3 Switched rating button intent in MainActivity to restaurant listView. //instead of activity_rating.xml
 * 4 Made modifications in several files for listView, adapter, etc..
