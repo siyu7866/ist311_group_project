@@ -38,8 +38,8 @@ public class DishAdapter extends ArrayAdapter<Rating> {
             TextView dishName = (TextView) v.findViewById(R.id.textRestaurantName);
             TextView ratingNumber = (TextView) v.findViewById(R.id.textAverageRating);
             Button b = (Button) v.findViewById(R.id.buttonEnterRating);
-            dishName.setText(Rating.getRestaurantName());
-            ratingNumber.setText(Rating.getRatingNumber());
+            dishName.setText(rating.getRestaurant());
+            ratingNumber.setText(rating.getRating());
             b.setVisibility(View.INVISIBLE);
         }
         catch (Exception e) {

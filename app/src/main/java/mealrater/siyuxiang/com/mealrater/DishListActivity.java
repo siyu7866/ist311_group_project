@@ -8,31 +8,27 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class DishListActivity extends AppCompatActivity {
-        ArrayList<Rating> dishes ;
-        DishAdapter adapter;
+    ArrayList<Rating> dish;
+    DishAdapter adapter;
 
-        protected void onCreate(Bundle saveInstanceState) {
-            super.onCreate(saveInstanceState);
-            setContentView(R.layout.activity_dish_list);
+    protected void onCreate(Bundle saveInstanceState) {
+        super.onCreate(saveInstanceState);
+        setContentView(R.layout.activity_dish_list);
 
-            RatingDataSource ds = new RatingDataSource(this);
+//            RatingDataSource ds = new RatingDataSource(this);
+//
+//            try {
+//                ds.open();
+//                dishes = ds.getRestaurantName();
+//                ds.close();
+//                ListView listView = (ListView) findViewById(R.id.lvRestaurantDishes);
+//                listView.setAdapter(new DishAdapter(this, dishes));
+//            }
+//            catch (Exception e) {
+//                Toast.makeText(this, "Error retrieving dishes", Toast.LENGTH_LONG).show();
+//            }
+//
+//        }
 
-            try {
-                ds.open();
-                dishes = ds.getRestaurant();
-                ds.close();
-                ListView listView = (ListView) findViewById(R.id.lvRestaurantDishes);
-                listView.setAdapter(new DishAdapter(this, dishes));
-            }
-            catch (Exception e) {
-                Toast.makeText(this, "Error retrieving dishes", Toast.LENGTH_LONG).show();
-            }
-
-        }
-
-
-
-
-
-
+    }
 }

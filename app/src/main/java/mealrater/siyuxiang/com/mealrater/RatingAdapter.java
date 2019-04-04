@@ -13,12 +13,12 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
-public class RatingAdapter extends ArrayAdapter<Rating> {
-    private ArrayList<Rating> items;
+public class RatingAdapter extends ArrayAdapter<AverageRating> {
+    private ArrayList<AverageRating> items;
     private Context adapterContext;
 
-    public RatingAdapter(Context context, ArrayList<Rating> items) {
-        super(context, R.layout.activity_restaurant_list, items);
+    public RatingAdapter(Context context, ArrayList<AverageRating> items) {
+        super(context, R.layout.list_item, items);
         adapterContext = context;
         this.items = items;
     }
@@ -27,7 +27,7 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
         try {
-            Rating rating = items.get(position);
+            AverageRating ratings = items.get(position);
 
             if (v == null) {
                 LayoutInflater vi = (LayoutInflater)
@@ -38,8 +38,8 @@ public class RatingAdapter extends ArrayAdapter<Rating> {
             TextView restaurantName = (TextView) v.findViewById(R.id.textRestaurantName);
             TextView ratingNumber = (TextView) v.findViewById(R.id.textAverageRating);
             Button b = (Button) v.findViewById(R.id.buttonEnterRating);
-            restaurantName.setText(Rating.getRestaurantName());
-            ratingNumber.setText(Rating.getAverageRatingNumber());
+            restaurantName.setText(ratings.getRestaurant());
+            ratingNumber.setText(ratings.getRating());
             b.setVisibility(View.INVISIBLE);
         }
         catch (Exception e) {

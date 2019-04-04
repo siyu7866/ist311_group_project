@@ -30,9 +30,10 @@ public class RatingDataSource {
         try {
             ContentValues initialValues = new ContentValues();
 
-            initialValues.put("restaurant", r.getRestaurantName());
+            initialValues.put("restaurant", r.getRestaurant());
             initialValues.put("dish", r.getDishName());
-            initialValues.put("rating", r.getRatingNumber());
+            initialValues.put("rating", r.getRating());
+//            initialValues.put("averagerating", r.getAverageRatingNumber());
 
             didSucceed = database.insert("rating", null, initialValues) > 0;
         }
@@ -95,4 +96,33 @@ public class RatingDataSource {
         }
         return lastId;
     }
+
+
+    public ArrayList<AverageRating> getRatings() {
+        ArrayList<AverageRating> ratings = new ArrayList<AverageRating>();
+        Cursor cursor = null;
+
+        try {
+            String query = "SELECT restaurant, AVG(rating) FROM rating GROUP BY restaurant";
+            cursor = database.rawQuery(query, null);
+
+            AverageRating r;
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                r = new AverageRating();
+                r.setRestaurant(cursor.getString(0));
+                r.setRating(String.valueOf(cursor.getDouble(1)));
+                ratings.add(r);
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+            catch (Exception e) {
+                cursor.close();
+            }
+            return ratings;
+    }
+
+
 }
+

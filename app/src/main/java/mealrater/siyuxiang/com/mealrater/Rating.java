@@ -3,13 +3,13 @@ package mealrater.siyuxiang.com.mealrater;
 public class Rating {
 
     private int ratingID;
-    private String restaurantName;
+    private String restaurant;
     private String dishName;
     private int avg_ratingNumber;
-    private int ratingNumber;
+    private int rating;
 
     public Rating () {
-        ratingNumber = 0;
+        rating = 0;
         ratingID = -1;
     }
 
@@ -21,12 +21,12 @@ public class Rating {
         ratingID = i;
     }
 
-    public String getRestaurantName () {
-        return restaurantName;
+    public String getRestaurant () {
+        return restaurant;
     }
 
-    public void setRestaurantName (String s) {
-        restaurantName = s;
+    public void setRestaurant (String s) {
+        restaurant = s;
     }
 
     public String getDishName () {
@@ -37,12 +37,12 @@ public class Rating {
         dishName = s;
     }
 
-    public int getRatingNumber () {
-        return ratingNumber;
+    public int getRating () {
+        return rating;
     }
 
-    public void setRatingNumber (int i) {
-        ratingNumber = i;
+    public void setRating(int i) {
+        rating = i;
     }
 
     public int getAverageRatingNumber () {

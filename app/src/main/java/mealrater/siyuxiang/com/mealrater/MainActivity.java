@@ -38,23 +38,23 @@ public class MainActivity extends AppCompatActivity {
                 RadioButton rb5 = (RadioButton) findViewById(R.id.dishRating_5);
 
                 Rating r = new Rating();
-                r.setRestaurantName(editRestaurant.getText().toString());
+                r.setRestaurant(editRestaurant.getText().toString());
                 r.setDishName(editDish.getText().toString());
 
                 if (rb1.isChecked()) {
-                    r.setRatingNumber(1);
+                    r.setRating(1);
                 }
                 else if (rb2.isChecked()) {
-                    r.setRatingNumber(2);
+                    r.setRating(2);
                 }
                 else if (rb3.isChecked()) {
-                    r.setRatingNumber(3);
+                    r.setRating(3);
                 }
                 else if (rb4.isChecked()) {
-                    r.setRatingNumber(4);
+                    r.setRating(4);
                 }
                 else if (rb5.isChecked()) {
-                    r.setRatingNumber(5);
+                    r.setRating(5);
                 }
 
                 boolean wasSuccessful = false;
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         ratingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RatingActivity.class);
+                Intent intent = new Intent(MainActivity.this, RestaurantListActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
