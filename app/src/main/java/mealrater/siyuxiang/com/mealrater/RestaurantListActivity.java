@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RestaurantListActivity extends AppCompatActivity {
-//    ArrayList<AverageRating> Ratings;
+    ArrayList<AverageRating> ratings;
 //    RatingAdapter adapter;
 
     @Override
@@ -24,6 +25,7 @@ public class RestaurantListActivity extends AppCompatActivity {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_restaurant_list);
 
+        initItemClick();
         initEnterRating();
 
 //        initRestaurantClick();
@@ -43,7 +45,7 @@ public class RestaurantListActivity extends AppCompatActivity {
             ds.open();
 //            Ratings = ds.getRatings();
 //            adapter = new RatingAdapter(this, Ratings);
-            ArrayList<AverageRating> ratings = ds.getRatings();
+            ratings = ds.getRatings();
             ds.close();
 
 
@@ -83,17 +85,17 @@ public class RestaurantListActivity extends AppCompatActivity {
     }
 
 
-//    private void initRestaurantClick() {
-//        ListView listView = (ListView) findViewById(R.id.lvRestaurant);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id) {
-//                Rating selectedRestaurant = restaurants.get(position);
-//                Intent intent = new Intent (RestaurantListActivity.this, DishListActivity.class);
-//                intent.putExtra("dishName", selectedRestaurant.getDishName());
-//                startActivity(intent);
-//            }
-//        });
-//    }
+    private void initItemClick() {
+        ListView listView = (ListView) findViewById(R.id.lvRestaurant);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+           public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id) {
+                AverageRating selectedRestaurant = ratings.get(position);
+                Intent intent = new Intent (RestaurantListActivity.this, DishListActivity.class);
+                intent.putExtra("restaurantName", selectedRestaurant.getRestaurant());
+                startActivity(intent);
+           }
+        });
+    }
 
 }
