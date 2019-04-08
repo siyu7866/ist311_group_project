@@ -10,6 +10,7 @@
 ### Siyu:
 * 1 Achieve to calculate average rating, and show that on the layout.
 * 2 Complete the dish list where has dishes in a specific restaurant and shows rating of each dish.
+* 3 Complete the layout to show rating of specific dish.
 ### Alyssa:
 ### Wenshi:
 * 1 Added AverageRating.java.
