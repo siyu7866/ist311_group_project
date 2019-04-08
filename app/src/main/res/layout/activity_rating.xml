@@ -14,17 +14,18 @@
         android:layout_marginStart="16dp"
         android:text="Select Restaurant:" />
 
-    <Spinner
-        android:id="@+id/spinnerRestaurant"
+
+    <TextView
+        android:id="@+id/textSelectDish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textSelectRestaurant"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/textSelectRestaurant"
+        android:layout_alignStart="@+id/textSelectRestaurant"
+        android:layout_alignLeft="@+id/textSelectRestaurant"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="50dp"
-        android:layout_weight="1"
-        android:inputType="text" />
-
+        android:text="Select Dish: " />
 
     <TextView
         android:id="@+id/textAverageRating"
@@ -33,7 +34,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_below="@+id/spinnerRestaurant"
+        android:layout_below="@+id/textSelectDish"
         android:layout_weight="1"
         android:text="Average Rating:" />
 
@@ -46,7 +47,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/spinnerRestaurant"
+        android:layout_below="@+id/textSelectDish"
         android:text="0" />
 
     <Button

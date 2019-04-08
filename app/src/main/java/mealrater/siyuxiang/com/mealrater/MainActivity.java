@@ -66,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
                 ds.close();
 
                 if (wasSuccessful) {
+                    //initScreen();
+                    Intent intent = new Intent(MainActivity.this, RatingActivity.class);
+                    intent.putExtra("restaurantName", editRestaurant.getText().toString());
+                    intent.putExtra("restaurantDish", editDish.getText().toString());
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
                     initScreen();
                 }
             }

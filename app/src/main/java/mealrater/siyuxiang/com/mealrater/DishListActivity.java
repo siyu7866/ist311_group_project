@@ -54,7 +54,6 @@ public class DishListActivity extends AppCompatActivity {
         String restaurantName = intent.getStringExtra("restaurantName");
         txtRestaurantTitle.setText(restaurantName);
 
-
         RatingDataSource ds = new RatingDataSource(this);
         try {
             ds.open();

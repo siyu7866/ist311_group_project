@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import android.database.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class RatingDataSource {
 
@@ -148,7 +149,47 @@ public class RatingDataSource {
         return ratings;
     }
 
+    public String getSpecificDishRating (String RestaurantDish) {
+        String dishRating = "0";
+        Cursor cursor = null;
 
+        try {
+            String query = "SELECT AVG(rating) FROM rating WHERE dish = '" + RestaurantDish + "'";
+            cursor = database.rawQuery(query, null);
+
+            cursor.moveToFirst();
+            dishRating = cursor.getString(0);
+            cursor.close();
+        }
+        catch (Exception e) {
+            cursor.close();
+        }
+        return dishRating;
+    }
+
+    /*public List<AverageRating> getDishes(String RestaurantName) {
+        List<AverageRating> restaurantDishes = new ArrayList<AverageRating>();
+        Cursor cursor = null;
+
+        try {
+            String query = "SELECT dish FROM rating WHERE restaurant = '" + RestaurantName + "' GROUP BY dish";
+            cursor = database.rawQuery(query, null);
+
+            AverageRating r;
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                r = new AverageRating();
+                r. setRestaurantDish(cursor.getString(0));
+                restaurantDishes.add(r);
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+        catch (Exception e) {
+            cursor.close();
+        }
+        return restaurantDishes;
+    }*/
 
 }
 
